@@ -2,6 +2,7 @@ from ex0.Card import Card
 from ex2.Combatable import Combatable
 from ex2.Magical import Magical
 
+
 class EliteCard(Card, Combatable, Magical):
     def __init__(
             self,
@@ -13,13 +14,13 @@ class EliteCard(Card, Combatable, Magical):
             defense: int,
     ) -> None:
         super().__init__(name, cost, rarity)
-    
+
         if attack <= 0:
-            raise ValueError("Attack must be bigger than 0")
+            raise ValueError('Attack must be bigger than 0')
         if health <= 0:
-            raise ValueError("Health must be bigger than 0")
+            raise ValueError('Health must be bigger than 0')
         if defense < 0:
-            raise ValueError("Defense must be bigger or equal to 0")
+            raise ValueError('Defense must be bigger or equal to 0')
 
         self.attack_power = attack
         self.health = health
@@ -59,9 +60,9 @@ class EliteCard(Card, Combatable, Magical):
 
     def get_combat_stats(self) -> dict:
         return {
-            "attack": self.attack_power,
-            "defense": self.defense,
-            "health": self.health,
+            'attack': self.attack_power,
+            'defense': self.defense,
+            'health': self.health,
         }
 
     def cast_spell(self, spell_name: str, targets: list) -> dict:
@@ -81,6 +82,6 @@ class EliteCard(Card, Combatable, Magical):
 
     def get_magic_stats(self) -> dict:
         return {
-            "mana_pool": self.mana,
-            "known_spells": ["Fireball", "Rasengan", "Kagebushin"],
+            'mana_pool': self.mana,
+            'known_spells': ['Fireball', 'Rasengan', 'Kagebushin'],
         }

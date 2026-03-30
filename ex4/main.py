@@ -15,13 +15,13 @@ def main() -> None:
     wizard_id = platform.register_card(wizard)
 
     print(f'{dragon.name} (ID: {dragon_id}):')
-    print(f'- Interfaces: [Card, Combatable, Rankable]')
+    print('- Interfaces: [Card, Combatable, Rankable]')
     print(f'- Rating: {dragon.ranking}')
     print(f'- Record: {dragon.wins}-{dragon.losses}')
     print()
 
     print(f'{wizard.name} (ID: {wizard_id}):')
-    print(f'- Interfaces: [Card, Combatable, Rankable]')
+    print('- Interfaces: [Card, Combatable, Rankable]')
     print(f'- Rating: {wizard.ranking}')
     print(f'- Record: {wizard.wins}-{wizard.losses}')
     print()
@@ -33,7 +33,10 @@ def main() -> None:
 
     print('Tournament Leaderboard:')
     for i, card in enumerate(platform.get_leaderboard(), 1):
-        print(f'{i}. {card.name} - Rating: {card.ranking} ({card.wins}-{card.losses})')
+        print(
+            f'{i}. {card.name} - Rating: {card.ranking} '
+            f'({card.wins}-{card.losses})'
+        )
     print()
 
     print('Platform Report:')

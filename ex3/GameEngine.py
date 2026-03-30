@@ -1,6 +1,7 @@
 from ex3.CardFactory import CardFactory
 from ex3.GameStrategy import GameStrategy
 
+
 class GameEngine:
     def __init__(self) -> None:
         self.factory: CardFactory | None = None

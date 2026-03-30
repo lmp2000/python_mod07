@@ -5,7 +5,6 @@ def main() -> None:
     print('\n=== DataDeck Ability System ===\n')
 
     warrior = EliteCard('Arcane Warrior', 6, 'Legendary', 5, 10, 3)
-    game_state = {'available_mana': 8}
 
     print('EliteCard capabilities:')
     print("- Card: ['play', 'get_card_info', 'is_playable']")
@@ -21,7 +20,8 @@ def main() -> None:
     print()
 
     print('Magic phase:')
-    print(f'Spell cast: {warrior.cast_spell("Fireball", ["Enemy1", "Enemy2"])}')
+    spell_result = warrior.cast_spell('Fireball', ['Enemy1', 'Enemy2'])
+    print(f'Spell cast: {spell_result}')
     print(f'Mana channel: {warrior.channel_mana(3)}')
     print()
 

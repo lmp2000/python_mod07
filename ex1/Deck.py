@@ -27,7 +27,7 @@ class Deck:
 
     def draw_card(self) -> Card:
         if len(self.cards) <= 0:
-            return None
+            raise ValueError('Deck is empty')
         return self.cards.pop(0)
 
     def get_deck_stats(self) -> dict:

@@ -6,10 +6,18 @@ class CreatureCard(Card):
             self, name: str, cost: int, rarity: str, attack: int, health: int
     ) -> None:
         super().__init__(name, cost, rarity)
-        if attack <= 0:
+        if (
+            attack <= 0
+            or not isinstance(attack, int)
+            or isinstance(attack, bool)
+        ):
             raise ValueError('Attack must be bigger than 0')
         self.attack = attack
-        if health <= 0:
+        if (
+            health <= 0
+            or not isinstance(health, int)
+            or isinstance(health, bool)
+        ):
             raise ValueError('Health must be bigger than 0')
         self.health = health
 

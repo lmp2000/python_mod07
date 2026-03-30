@@ -12,7 +12,10 @@ def main() -> None:
     print(dragon.get_card_info())
     print()
 
-    print(f'Playing Fire Dragon with {game_state["available_mana"]} mana available:')
+    print(
+        f'Playing Fire Dragon with {game_state["available_mana"]} mana '
+        'available:'
+    )
     print(f'Playable: {dragon.is_playable(game_state["available_mana"])}')
     print(f'Play result: {dragon.play(game_state)}')
     print()
@@ -22,7 +25,10 @@ def main() -> None:
     print()
 
     game_state['available_mana'] = 3
-    print(f'Testing insufficient mana ({game_state["available_mana"]} available):')
+    print(
+        'Testing insufficient mana '
+        f'({game_state["available_mana"]} available):'
+    )
     print(f'Playable: {dragon.is_playable(game_state["available_mana"])}')
     print()
 
